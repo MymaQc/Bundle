@@ -1,0 +1,157 @@
+#
+#  ▀█████████▄  ███    █▄  ███▄▄▄▄   ████████▄   ▄█          ▄████████
+#    ███    ███ ███    ███ ███▀▀▀██▄ ███   ▀███ ███         ███    ███
+#    ███    ███ ███    ███ ███   ███ ███    ███ ███         ███    █▀
+#   ▄███▄▄▄██▀  ███    ███ ███   ███ ███    ███ ███        ▄███▄▄▄
+#  ▀▀███▀▀▀██▄  ███    ███ ███   ███ ███    ███ ███       ▀▀███▀▀▀
+#    ███    ██▄ ███    ███ ███   ███ ███    ███ ███         ███    █▄
+#    ███    ███ ███    ███ ███   ███ ███   ▄███ ███▌    ▄   ███    ███
+#  ▄█████████▀  ████████▀   ▀█   █▀  ████████▀  █████▄▄██   ██████████
+#                                               ▀
+
+bundle:
+
+  # Liste des messages du plugin
+  message:
+    # Message quand le plugin s'active
+    enable-plugin: Bundle a été activé avec succès !
+    # Message quand le plugin se désactive
+    disable-plugin: Bundle a été désactivé avec succès !
+    # Message quand un joueur ouvre un bundle
+    open-bundle: §fVous venez de recevoir §e{quantity} lot(s) §fdans votre inventaire en ouvrant un bundle !
+    # Message quand un joueur achète un bundle
+    buy-bundle: §fVous venez d'acheter §e1 bundle §fpour §e{price}$ §f! Vous en possédez désormais §e{bundle} §f!
+    # Message quand un staff ajoute des bundles à un joueur avec succès
+    add-sender: §fVous venez d'ajouter §e{quantity} bundle(s) §fà §e{player} §f!
+    # Message quand un joueur reçoit des bundles venant d'un staff avec succès
+    add-target: §e{staff} §fvous a ajouté §e{quantity} bundle(s) §f! Vous possédez désormais §e{bundle} bundle(s) §f!
+    # Message quand un staff retire des bundles à un joueur avec succès
+    reduce-sender: §fVous venez de retirer §e{quantity} bundle(s) §fà §e{player} §f!
+    # Message quand un joueur se voit réduire des bundles venant d'un staff avec succès
+    reduce-target: §e{staff} §fvous a retiré §e{quantity} bundle(s) §f! Vous possédez désormais §e{bundle} bundle(s) §f!
+    # Message quand un staff ajoute des bundles à un joueur avec succès
+    set-sender: §fVous venez de définir §e{quantity} bundle(s) §fà §e{player} §f!
+    # Message quand un joueur reçoit des bundles venant d'un staff avec succès
+    set-target: §e{staff} §fvous a défini §e{quantity} bundle(s) §f! Vous possédez désormais §e{bundle} bundle(s) §f!
+    # Message quand un staff ajoute des bundles à tous les joueurs connectés avec succès
+    giveall-sender: §fVous venez d'ajouter §e{quantity} bundle(s) §fà §e{online} joueur(s) §f!
+    # Message quand un joueur reçoit des bundles lors d'un giveall
+    giveall-target: §e{staff} §fvous a ajouté §e{quantity} bundle(s) §fgrâce à un giveall ! Vous possédez désormais §e{bundle} bundle(s) §f!
+    # Message quand un joueur utilise un papier contenant un kit avec succès
+    bundle-use: §fVous venez de reçevoir §e{bundle} bundle(s) §fgrâce à votre billet !
+    # Message quand un joueur utilise un papier contenant un kit avec succès
+    kit-use: §fVous venez de reçevoir le §ekit {kit} §fgrâce à votre billet !
+    # Message quand un joueur utilise un papier contenant de la money avec succès
+    money-use: §fVous venez de reçevoir §e{montant}$ §fgrâce à votre billet !
+    # Message d'erreur quand un joueur essaie d'acheter un bundle mais qu'il n'a pas assez de money
+    no-money: §cVous ne possédez pas assez d'argent pour acheter un bundle.
+    # Message d'erreur quand un joueur essaie d'ouvrir un bundle alors qu'il n'en a pas
+    no-bundle: §cVous ne possédez aucun bundle.
+    # Message d'erreur quand une quantité n'est pas une valeur numérique
+    not-numeric: §cLa quantité de bundle doit obligatoirement être une valeur numérique.
+    # Message d'erreur quand l'éxécuteur de la commande essaie de gérer un joueur qui n'est pas en ligne
+    no-player: §cLe joueur {player} n'est pas en ligne.
+    # Message d'erreur quand un staff souhaite réduire les bundles d'un joueur mais qu'il en possède moins que la quantité indiquée
+    not-enought-bundle: §cLe joueur {player} possède moins de {quantity} bundle(s).
+    # Message d'erreur quand un joueur essaie d'éxécuter une commande sans être OP
+    no-perm: §cVous ne disposez pas des permissions nécessaires pour utiliser cette commande.
+    # Message d'erreur quand l'éxécuteur de la commande n'est pas un joueur
+    no-console: §cVous ne pouvez pas utiliser cette commande depuis la console.
+
+  # Liste des forms du plugin
+  forms:
+    # Liste des messages du form principal
+    main:
+      # Titre du form principal
+      title: §l§6» §r§eBundle §l§6«§r
+      # Contenu du form principal
+      content: "§l§6» §rBienvenue dans le menu §edes bundles §f! Que souhaitez-vous faire ?\n\n§fVous possédez §e{bundle} §fbundle(s) !"
+      # Liste des boutons du form principal
+      buttons:
+        # Texte du bouton permettant d'ouvrir un bundle dans le form principal
+        open: §8Ouvrir un bundle
+        # Texte du bouton permettant d'acheter un bundle dans le form principal
+        buy: §8Acheter un bundle
+        # Texte du bouton permettant de visualiser les lots obtenables dans le form principal
+        visualize: §8Visualiser les lots
+    # Liste des messages du form d'achat de bundle
+    buy:
+      # Titre du form d'achat de bundle
+      title: §l§6» §r§eConfirmation §l§6«§r
+      # Contenu du form d'achat de bundle
+      content: "§l§6» §rVoulez-vous vraiment acheter §e1 bundle §fen échange de §e{price}$ §f?\n\n§fVous possédez §e{money}$ §f!"
+      # Liste des boutons du form d'achat de bundle
+      buttons:
+        # Texte du bouton permettant de confirmer l'achat d'un bundle
+        confirm: §8Acheter
+        # Texte du bouton permettant d'annuler l'achat d'un bundle
+        cancel: §cAnnuler
+
+  # Liste des paramètres du plugin
+  settings:
+    # Position du coffre permettant d'accéder aux bundles
+    position: [0, 69, 23, map]
+    # Prix d'achat d'un bundle
+    price: 100000
+    # Quantité d'items donnés par un bundle
+    quantity: 3
+    # Nom de l'inventaire permettant la visualisation des lots
+    visualize-name: §l§6» §r§eVisualisation des bundles §l§6«§r
+    # Liste des prix des bundles
+    # Format Kit -> "kit:§bKit Vidéaste+:§4Videaste+"
+    # Format Money -> "money:§eBillet de 5k:5000"
+    # Format Bundle -> "bundle:§61 bundle:1"
+    # Format Item -> "item:diamond:64"
+    rewards:
+      - "money:§eBillet de 5k:5000"
+      - "money:§eBillet de 10k:10000"
+      - "money:§eBillet de 20k:20000"
+      - "money:§eBillet de 50k:50000"
+      - "bundle:§61 bundle:1"
+      - "item:diamond:32"
+      - "item:diamond:64"
+      - "item:emerald:32"
+      - "item:emerald:64"
+
+  # Liste des paramètres des commandes du plugin
+  commands:
+    # Liste des paramètres de la commande addbundle
+    addbundle:
+      # Nom de la commande addbundle
+      name: addbundle
+      # Description de la commande addbundle
+      description: Ajouter des bundles à un joueur
+      # Message d'usage de la commande addbundle
+      usage: §fVous devez faire §e/addbundle (joueur) (quantité) §fpour ajouter des bundles à un joueur !
+      # Liste d'aliases de la commande addbundle
+      aliases: []
+    # Liste des paramètres de la commande reducebundle
+    reducebundle:
+      # Nom de la commande reducebundle
+      name: reducebundle
+      # Description de la commande reducebundle
+      description: Retirer des bundles à un joueur
+      # Message d'usage de la commande removebundle
+      usage: §fVous devez faire §e/reducebundle (joueur) (quantité) §fpour retirer des bundles à un joueur !
+      # Liste d'aliases de la commande removebundle
+      aliases: [removebundle]
+    # Liste des paramètres de la commande addbundle
+    setbundle:
+      # Nom de la commande setbundle
+      name: setbundle
+      # Description de la commande setbundle
+      description: Définir les bundles d'un joueur
+      # Message d'usage de la commande addbundle
+      usage: §fVous devez faire §e/setbundle (joueur) (quantité) §fpour définir les bundles d'un joueur !
+      # Liste d'aliases de la commande addbundle
+      aliases: []
+    # Liste des paramètres de la commande giveallbundle
+    giveallbundle:
+      # Nom de la commande giveallbundle
+      name: giveallbundle
+      # Description de la commande giveallbundle
+      description: Ajouter des packs à tous les joueurs connectés
+      # Message d'usage de la commande giveallbundle
+      usage: §fVous devez faire §e/giveallbundle (quantité) §fpour ajouter des packs à tous les joueurs connectés !
+      # Liste d'aliases de la commande giveallbundle
+      aliases: []

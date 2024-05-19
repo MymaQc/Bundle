@@ -1,0 +1,9 @@
+name: Bundle
+main: bundle\Bundle
+
+src-namespace-prefix: bundle
+
+author: Myma
+api: [ 5.0.0 ]
+depend: [ EconomyAPI ]
+version: 1.0
